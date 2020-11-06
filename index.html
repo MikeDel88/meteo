@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap" rel="stylesheet">
+        <title>Station Météo</title>
+        <script src="app.js"></script>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                background-image: url('bg.jpg');
+                background-size: contains;
+                background-position-y: top;
+            }
+
+            #bloc_page {
+                max-width: 100%;
+                margin: auto;
+                background-color: transparent;
+                font-family: 'Raleway', sans-serif;
+            }
+
+            header {
+                background-color: transparent;
+                padding: 30px;
+                text-align: center;
+            }
+
+            header select {
+                width: 300px;
+                padding: 5px;
+                border: 2px solid transparent;
+                margin-top: 4px;
+                cursor: pointer;
+                outline: none;
+                color: white;
+            }
+
+            header button,
+            select {
+                background-color: transparent;
+                border-radius: 30px;
+                border: 2px solid white;
+                color: white;
+                padding: 10px 15px;
+                cursor: pointer;
+                margin-top: 40px;
+                font-size: 25px;
+            }
+
+            header button:hover,
+            select:hover {
+                background-color: rgba(0, 0, 0, 0.5);
+                border: 2px solid transparent;
+            }
+
+            header button:disabled {
+                display: none;
+            }
+
+            h1 {
+                margin: 0;
+                font-size: 30px;
+                text-transform: uppercase;
+                color: white;
+                padding-bottom: 20px;
+            }
+
+            aside {
+                display: flex;
+                justify-content: space-around;
+                padding: 10px;
+                background-color: rgba(0, 0, 0, 0.5);
+                color: rgba(255, 255, 255, 0.694);
+                letter-spacing: 2px;
+                margin-top: 20px;
+                position: absolute;
+                padding: 50px;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                flex-wrap: wrap;
+            }
+
+            article {
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+            }
+
+            h2 {
+                color: rgba(5, 5, 5, 0.8);
+                font-size: 45px;
+                letter-spacing: 2px;
+                margin-left: 20%;
+                text-shadow: -2px 4px 6px rgba(0, 0, 0, 0.468);
+            }
+
+            img {
+                width: 30px;
+                height: auto;
+            }
+
+            main {
+                display: none;
+            }
+
+            #weather {
+                display: block;
+                width: 200px;
+            }
+
+            article span {
+                font-size: 50px;
+                color: rgba(8, 8, 8, 0.842);
+                padding: 30px;
+                display: block;
+                text-shadow: -2px 4px 6px rgba(0, 0, 0, 0.468);
+            }
+
+            #wind::before {
+                content: url('wind-solid.svg');
+                display: inline-block;
+                width: 40px;
+                padding: 0 40px;
+            }
+
+            #wind::after {
+                content: ' km/h ';
+                font-size: 16px;
+                display: inline-block;
+                position: absolute;
+                padding-left: 10px;
+            }
+
+            #temp::before {
+                content: url('temp.svg');
+                display: inline-block;
+                width: 30px;
+                padding: 40px;
+            }
+
+            #direction {
+                width: 50px;
+                margin-left: 100px;
+                transform: skew(20deg);
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="bloc_page">
+            <header>
+                <button id="information_city">Récupérer la liste des villes</button>
+                <select name="city" id="select_city">
+                </select>
+            </header>
+            <main>
+                <h2 id="city"></h2>
+                <article>
+                    <img id="weather">
+                    <span id="temp"></span>
+                    <span id="wind"></span>
+                    <span id="wind_direction"><img id="direction" src="arrow-up.svg" alt="fleche"></span>
+                </article>
+                <aside>
+                    <p id="gps">
+                        GPS:
+                        <span id="lat"></span>,
+                        <span id="long"></span>
+                    </p>
+                    <p id="date"></p>
+                </aside>
+            </main>
+        </div>
+    </body>
+
+</html>

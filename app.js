@@ -23,7 +23,7 @@ window.addEventListener('DOMContentLoaded', function () {
             }
         }
 
-        static APPID = '**************';
+        static APPID = '3d4c37541fb7e40bb2948b81d5626b10';
         static ICON_PATH = 'http://openweathermap.org/img/wn/'
         static requestJSON = async (url) => {
             let response = await fetch(url);
